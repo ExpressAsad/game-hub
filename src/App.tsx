@@ -1,4 +1,5 @@
 import GameGrid from "./components/GameGrid";
+import Genre from "./components/Genre";
 import Navbar from "./components/Navbar";
 
 const App = () => {
@@ -12,7 +13,9 @@ const App = () => {
       {/* Content */}
       <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] bg-gray-100 dark:bg-gray-800">
         {/* Sidebar */}
-        <aside className="hidden md:block bg-gray-100 dark:bg-gray-800"></aside>
+        <aside className="hidden md:block bg-gray-100 dark:bg-gray-800">
+          <Genre />
+        </aside>
 
         {/* Main */}
         <main className=" min-h-[500px] bg-gray-100 dark:bg-gray-800">
