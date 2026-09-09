@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
-    <div className="min-h-screen grid grid-rows-[78px_1fr] dark:bg-gray-800">
+    <div className="min-h-screen grid grid-rows-[90px_1fr] dark:bg-gray-800">
       {/* Navbar */}
       <nav className="bg-gray-100 dark:bg-gray-800">
         <Navbar />
