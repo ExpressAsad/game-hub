@@ -1,9 +1,12 @@
 import logo from "../assets/React-Logo.png";
+import DarkMode from "./DarkMode";
 const Navbar = () => {
   return (
-    <div className="mx-2 flex justify-between items-center">
-      <img src={logo} alt="Logo" className="" width={40} height={40} />
-      <h1>Hello</h1>
+    <div className="shadow-md rounded-lg">
+      <div className="container mx-auto flex items-center justify-between">
+        <img src={logo} alt="Logo" className="" width={60} height={40} />
+        <DarkMode />
+      </div>
     </div>
   );
 };

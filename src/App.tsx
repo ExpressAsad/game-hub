@@ -2,19 +2,19 @@ import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
-    <div className="min-h-screen grid grid-rows-[64px_1fr]">
+    <div className="min-h-screen grid grid-rows-[78px_1fr] dark:bg-gray-800">
       {/* Navbar */}
-      <nav className="container mx-auto content-center">
+      <nav className="bg-gray-100 dark:bg-gray-800">
         <Navbar />
       </nav>
 
       {/* Content */}
-      <div className="grid grid-cols-1 md:grid-cols-[220px_1fr]">
+      <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] bg-gray-100 dark:bg-gray-800">
         {/* Sidebar */}
-        <aside className="hidden md:block bg-gray-100"></aside>
+        <aside className="hidden md:block bg-gray-100 dark:bg-gray-800"></aside>
 
         {/* Main */}
-        <main className="bg-white min-h-[5x]00p"></main>
+        <main className=" min-h-[500px] bg-gray-100 dark:bg-gray-800"></main>
       </div>
     </div>
   );
