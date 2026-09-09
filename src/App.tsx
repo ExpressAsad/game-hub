@@ -1,3 +1,4 @@
+import GameGrid from "./components/GameGrid";
 import Navbar from "./components/Navbar";
 
 const App = () => {
@@ -14,7 +15,9 @@ const App = () => {
         <aside className="hidden md:block bg-gray-100 dark:bg-gray-800"></aside>
 
         {/* Main */}
-        <main className=" min-h-[500px] bg-gray-100 dark:bg-gray-800"></main>
+        <main className=" min-h-[500px] bg-gray-100 dark:bg-gray-800">
+          <GameGrid />
+        </main>
       </div>
     </div>
   );
