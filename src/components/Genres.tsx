@@ -1,6 +1,8 @@
-import useGenres from "../hooks/useGenres";
-
-const Genre = () => {
+import useGenres, { type Genre } from "../hooks/useGenres";
+interface Props {
+  onSelectGenre: (genre: Genre) => void;
+}
+const Genres = ({ onSelectGenre }: Props) => {
   const { data, error, isLoading } = useGenres();
 
   if (isLoading) return <p>Loading...</p>;
@@ -22,7 +24,10 @@ const Genre = () => {
               className="w-10 h-10 rounded-lg object-cover"
             />
 
-            <p className="font-medium text-gray-800 dark:text-gray-200">
+            <p
+              onClick={() => onSelectGenre(genre)}
+              className="font-medium text-gray-800 dark:text-gray-200"
+            >
               {genre.name}
             </p>
           </div>
@@ -32,4 +37,4 @@ const Genre = () => {
   );
 };
 
-export default Genre;
+export default Genres;

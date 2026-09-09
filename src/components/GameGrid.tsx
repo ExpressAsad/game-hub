@@ -1,11 +1,14 @@
 import useGames from "../hooks/useGames";
+import type { Genre } from "../hooks/useGenres";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameFetchError from "./GameFetchError";
-
-const GameGrid = () => {
+interface Props {
+  genre: Genre | null;
+}
+const GameGrid = ({ genre }: Props) => {
   const skeletonCount = [1, 2, 3, 4, 5, 6, 7, 8];
-  const { data: games, error, isLoading } = useGames();
+  const { data: games, error, isLoading } = useGames(genre);
   if (error) return <GameFetchError />;
   return (
     <>

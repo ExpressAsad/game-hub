@@ -1,6 +1,6 @@
 import apiClient from '../services/api-client'
 import { useQuery } from '@tanstack/react-query'
-interface Genre{
+export interface Genre{
     id: number;
     name: string;
     slug: string;
