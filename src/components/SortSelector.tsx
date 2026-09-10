@@ -18,7 +18,7 @@ const SortSelector = ({ onSelectSort }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="relative inline-block mx-3">
+    <div className="relative inline-block ml-2">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 rounded-lg bg-gray-200 px-4 py-2 font-medium text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-gray-600"
@@ -34,7 +34,7 @@ const SortSelector = ({ onSelectSort }: Props) => {
       {isOpen && (
         <ul
           className="
-            absolute left-0 z-10 mt-2 w-48
+            absolute left-0 z-10 mt-2 w-32
             rounded-lg bg-white p-2 shadow-lg
             dark:bg-gray-800
           "
@@ -47,6 +47,7 @@ const SortSelector = ({ onSelectSort }: Props) => {
                 setIsOpen(false);
               }}
               className="
+             
                 cursor-pointer rounded-md px-3 py-2
                 text-gray-800 hover:bg-gray-100
                 dark:text-gray-200 dark:hover:bg-gray-700

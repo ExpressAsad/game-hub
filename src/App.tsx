@@ -35,10 +35,12 @@ const App = () => {
         {/* Main */}
         <main className=" min-h-[500px] bg-gray-100 dark:bg-gray-800">
           <GameHeading genre={selectedGenre} platform={selectedPlatform} />
-          <SortSelector onSelectSort={(ordering) => setOrdering(ordering)} />
-          <PlatformSelector
-            onSelectPlatform={(platform) => setSelectedPlatform(platform)}
-          />
+          <div className="flex gap-8 px-3">
+            <SortSelector onSelectSort={(ordering) => setOrdering(ordering)} />
+            <PlatformSelector
+              onSelectPlatform={(platform) => setSelectedPlatform(platform)}
+            />
+          </div>
           <GameGrid
             search={searchText}
             genre={selectedGenre}
