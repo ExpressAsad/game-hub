@@ -17,7 +17,10 @@ const App = () => {
       <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] bg-gray-100 dark:bg-gray-800">
         {/* Sidebar */}
         <aside className="hidden md:block bg-gray-100 dark:bg-gray-800">
-          <Genres onSelectGenre={(genre) => setSelectedGenre(genre)} />
+          <Genres
+            selectedGenre={selectedGenre}
+            onSelectGenre={(genre) => setSelectedGenre(genre)}
+          />
         </aside>
 
         {/* Main */}
