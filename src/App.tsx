@@ -16,9 +16,9 @@ const App = () => {
   const [searchText, setSearchText] = useState("");
   const [ordering, setOrdering] = useState("");
   return (
-    <div className="min-h-screen grid grid-rows-[90px_1fr] dark:bg-gray-800">
+    <div className=" min-h-screen grid grid-rows-[90px_1fr] dark:bg-gray-800">
       {/* Navbar */}
-      <nav className="bg-gray-100 dark:bg-gray-800 ">
+      <nav className="bg-gray-100 dark:bg-gray-800">
         <Navbar onSearch={(text) => setSearchText(text)} />
       </nav>
 
