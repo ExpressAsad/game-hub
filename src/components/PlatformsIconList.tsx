@@ -6,7 +6,7 @@ import {
   FaLinux,
   FaAndroid,
 } from "react-icons/fa";
-import type { Platform } from "../hooks/useGames";
+import type { Platform } from "../hooks/usePlatforms";
 
 interface Props {
   platforms: Platform[];

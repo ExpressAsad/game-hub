@@ -3,15 +3,23 @@ import GameGrid from "./components/GameGrid";
 import Genres from "./components/Genres";
 import Navbar from "./components/Navbar";
 import type { Genre } from "./hooks/useGenres";
+import type { Platform } from "./hooks/usePlatforms";
 import PlatformSelector from "./components/PlatformSelector";
+import SortSelector from "./components/SortSelector";
+import GameHeading from "./components/GameHeading";
 
 const App = () => {
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
+  const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(
+    null,
+  );
+  const [searchText, setSearchText] = useState("");
+  const [ordering, setOrdering] = useState("");
   return (
     <div className="min-h-screen grid grid-rows-[90px_1fr] dark:bg-gray-800">
       {/* Navbar */}
-      <nav className="bg-gray-100 dark:bg-gray-800">
-        <Navbar />
+      <nav className="bg-gray-100 dark:bg-gray-800 px-2">
+        <Navbar onSearch={(text) => setSearchText(text)} />
       </nav>
 
       {/* Content */}
@@ -26,8 +34,17 @@ const App = () => {
 
         {/* Main */}
         <main className=" min-h-[500px] bg-gray-100 dark:bg-gray-800">
-          <PlatformSelector />
-          <GameGrid genre={selectedGenre} />
+          <GameHeading genre={selectedGenre} platform={selectedPlatform} />
+          <SortSelector onSelectSort={(ordering) => setOrdering(ordering)} />
+          <PlatformSelector
+            onSelectPlatform={(platform) => setSelectedPlatform(platform)}
+          />
+          <GameGrid
+            search={searchText}
+            genre={selectedGenre}
+            platform={selectedPlatform}
+            ordering={ordering}
+          />
         </main>
       </div>
     </div>

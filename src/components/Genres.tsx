@@ -4,11 +4,7 @@ interface Props {
   selectedGenre: Genre | null;
 }
 const Genres = ({ onSelectGenre, selectedGenre }: Props) => {
-  const { data, error, isLoading } = useGenres();
-
-  if (isLoading) return <p>Loading...</p>;
-
-  if (error) return <p>Failed to load genres.</p>;
+  const { data } = useGenres();
 
   return (
     <>

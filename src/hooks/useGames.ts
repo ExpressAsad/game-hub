@@ -1,11 +1,7 @@
 import { useQuery } from "@tanstack/react-query"
 import apiClient from "../services/api-client"
 import type { Genre } from "./useGenres";
-export interface Platform{
-    id: number;
-    name: string;
-    slug: string;
-}
+import type { Platform } from "./usePlatforms";
 export interface Game{
     id: number;
     name: string;
@@ -17,12 +13,21 @@ interface FetchGamesResponse{
     count: number;
     results: Game[]
 }
-const useGames = (genre: Genre | null) => {
+interface GameQuery{
+    genre: Genre | null;
+    platform: Platform | null,
+    ordering: string;
+    search: string;
+}
+const useGames = (query: GameQuery) => {
   return useQuery<FetchGamesResponse, Error>({
-    queryKey: ['games', genre],
+    queryKey: ['games', query],
     queryFn: () => apiClient.get<FetchGamesResponse>('/games', {
         params: {
-            genres: genre?.id
+            genres: query.genre?.id,
+            platforms: query.platform?.id,
+            ordering: query.ordering,
+            search: query.search
         }
     }).then(res => res.data)
   })

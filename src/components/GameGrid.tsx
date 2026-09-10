@@ -3,12 +3,20 @@ import type { Genre } from "../hooks/useGenres";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameFetchError from "./GameFetchError";
+import type { Platform } from "../hooks/usePlatforms";
 interface Props {
   genre: Genre | null;
+  platform: Platform | null;
+  ordering: string;
+  search: string;
 }
-const GameGrid = ({ genre }: Props) => {
+const GameGrid = ({ genre, platform, ordering, search }: Props) => {
   const skeletonCount = [1, 2, 3, 4, 5, 6, 7, 8];
-  const { data: games, error, isLoading } = useGames(genre);
+  const {
+    data: games,
+    error,
+    isLoading,
+  } = useGames({ genre, platform, ordering, search });
   if (error) return <GameFetchError />;
   return (
     <>
