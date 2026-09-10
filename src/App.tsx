@@ -18,7 +18,7 @@ const App = () => {
   return (
     <div className="min-h-screen grid grid-rows-[90px_1fr] dark:bg-gray-800">
       {/* Navbar */}
-      <nav className="bg-gray-100 dark:bg-gray-800 px-2">
+      <nav className="bg-gray-100 dark:bg-gray-800 ">
         <Navbar onSearch={(text) => setSearchText(text)} />
       </nav>
 

@@ -6,8 +6,8 @@ interface Props {
 }
 const Navbar = ({ onSearch }: Props) => {
   return (
-    <div className="shadow-md rounded-lg py-2">
-      <div className=" flex items-center justify-between py-2">
+    <div className="shadow-md rounded-lg py-2 px-4">
+      <div className=" flex items-center justify-between">
         <img src={logo} alt="Logo" className="" width={40} height={40} />
         <SearchInput onSearchText={(text) => onSearch(text)} />
         <DarkMode />
