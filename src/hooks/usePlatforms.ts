@@ -12,7 +12,8 @@ interface FetchPlatformResponse{
 const usePlatforms = () => {
   return useQuery<FetchPlatformResponse>({
     queryKey: ['platforms'],
-    queryFn: () => apiClient('/platforms/lists/parents').then(res => res.data)
+    queryFn: () => apiClient('/platforms/lists/parents').then(res => res.data),
+    staleTime: 24 * 60 * 60 * 1000,
   })
    
 }
